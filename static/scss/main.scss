@@ -8,31 +8,39 @@ body {
   background-color: #eeeeee;
 }
 
-.outer-container {
-  .inner-container {
-    display: grid;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.grid-outer {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 
-    font-family: $orbitron;
+  font-family: $orbitron;
+  border-top: 1px solid $black;
+  border-left: 1px solid $black;
 
-    border-top: 1px solid $black;
-    border-left: 1px solid $black;
+  grid-template-areas:
+    'credits-bank steel-bank titanium-bank'
+    'credits-prod steel-prod titanium-prod'
+    'greenery-bank energy-bank heat-bank'
+    'greenery-prod energy-prod heat-prod';
 
+  @media screen and (max-width: 767px) {
     grid-template-areas:
-      'credits-bank steel-bank titanium-bank'
-      'credits-prod steel-prod titanium-prod'
-      'greenery-bank energy-bank heat-bank'
-      'greenery-prod energy-prod heat-prod';
+      'credits-bank steel-bank'
+      'credits-prod steel-prod'
+      'titanium-bank greenery-bank'
+      'titanium-prod greenery-prod'
+      'energy-bank heat-bank'
+      'energy-prod heat-prod';
+  }
 
-    @media screen and (max-width: 767px) {
-      grid-template-areas:
-        'credits-bank steel-bank'
-        'credits-prod steel-prod'
-        'titanium-bank greenery-bank'
-        'titanium-prod greenery-prod'
-        'energy-bank heat-bank'
-        'energy-prod heat-prod';
+  & > * {
+    border-bottom: 1px solid $black;
+    border-right: 1px solid $black;
+    padding: 10px;
+
+    p {
+      margin: 0;
+      margin-bottom: 10px;
     }
   }
 }
@@ -74,19 +82,33 @@ body {
   grid-area: heat-prod;
 }
 
-.grid-elem {
-  border-bottom: 1px solid $black;
-  border-right: 1px solid $black;
-  padding: 10px;
+.count-wrapper {
+  display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: auto;
+	width: 100%;
 
-  p {
-    margin: 0;
-    margin-bottom: 10px;
+	& > * {
+		padding: 10px;
+		border: 1px solid $black;
+		margin: 5px 10px;
+		min-width: 30px;
+		text-align: center;
+		border-radius: 4px;
+		line-height: 20px;
+	}
+
+  .plus-btn {
+		font-size: 34px;
   }
-}
 
-.bank {
-}
+  .minus-btn {
+		font-size: 34px;
+  }
 
-.prod {
+  .count {
+		font-size: 28px;
+		line-height: 26px;;
+  }
 }
