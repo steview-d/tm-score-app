@@ -5,7 +5,12 @@ $white: #ffffff;
 $black: #000000;
 
 body {
-  background-color: #eeeeee;
+	font-family: $orbitron;
+	background-color: #eeeeee;
+}
+
+.title-container {
+	text-align: center;
 }
 
 .grid-outer {
@@ -13,7 +18,6 @@ body {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
-  font-family: $orbitron;
   border-top: 1px solid $black;
   border-left: 1px solid $black;
 
@@ -142,4 +146,16 @@ body {
 		font-family: $orbitron;
 		width: 30px;
   }
+}
+
+.options-container {
+	margin-top: 30px;
+
+	.btn-reset {
+		border: 1px solid $black;
+		border-radius: 4px;
+		padding: 5px 10px;
+		user-select: none;
+		cursor: pointer;
+	}
 }
