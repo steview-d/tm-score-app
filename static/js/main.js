@@ -23,7 +23,8 @@ $('#production-phase').click(function () {
   let energyBank = parseInt($('#energy-bank').val());
   let heatBank = parseInt($('#heat-bank').val());
   heatBank += energyBank;
-  $('#heat-bank').val(heatBank);
+	$('#heat-bank').val(heatBank);
+	$('#energy-bank').val(0);
 
   // Add prod to bank
   $('.prod').each(function () {
