@@ -13,9 +13,17 @@ $('.minus').click(function () {
 });
 
 $('#reset-board').click(function () {
+  $('input').each(function (index, data) {
+    $(this).val(0);
+  });
+});
 
-  $('input').each(function(index,data) {
-   $(this).val(0);
- });
+$('#production-phase').click(function () {
+  // Convert energy to heat
+  let energyBank = parseInt($('#energy-bank').val());
+  let heatBank = parseInt($('#heat-bank').val());
+  heatBank += energyBank;
+  $('#heat-bank').val(heatBank);
 
+  // Add prod to bank
 });

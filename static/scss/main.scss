@@ -151,11 +151,13 @@ body {
 .options-container {
 	margin-top: 30px;
 
-	.btn-reset {
+	.btn-reset,
+	.btn-prod-phase {
 		border: 1px solid $black;
 		border-radius: 4px;
 		padding: 5px 10px;
 		user-select: none;
 		cursor: pointer;
+		margin-right:20px;
 	}
 }
