@@ -63,16 +63,22 @@ $('#production-phase').click(function () {
 });
 
 $('#load-state').click(function () {
-	let saveState = localStorage.getItem("tmSaveState").split(',')
-	$('input').each(function (idx) {
-		this.value = saveState[idx]
-	});
+  if (localStorage.getItem('tmSaveState') != null) {
+    let saveState = localStorage.getItem('tmSaveState').split(',');
+    $('input').each(function (idx) {
+      this.value = saveState[idx];
+    });
+  }
 });
 
 $('#save-state').click(function () {
-	let saveState = [];
-	$('input').each(function () {
-		saveState.push(this.value)
-	});
-	localStorage.setItem("tmSaveState", saveState)
+  let saveState = [];
+  $('input').each(function () {
+    saveState.push(this.value);
+  });
+  localStorage.setItem('tmSaveState', saveState);
+});
+
+$('#clear-state').click(function () {
+  localStorage.removeItem('tmSaveState');
 });
