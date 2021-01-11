@@ -44,6 +44,11 @@ $('#production-phase').click(function () {
   // be added to Credits when running prod phase.
 });
 
-// Add save state
-// - Save all input values to local storage and
-// retieve on click on repop input values.
+$('#load-state').click(function () {
+	return
+});
+
+$('#save-state').click(function () {
+	return
+});
+

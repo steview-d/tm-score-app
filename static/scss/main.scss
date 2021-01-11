@@ -5,12 +5,12 @@ $white: #ffffff;
 $black: #000000;
 
 body {
-	font-family: $orbitron;
-	background-color: #eeeeee;
+  font-family: $orbitron;
+  background-color: #eeeeee;
 }
 
 .title-container {
-	text-align: center;
+  text-align: center;
 }
 
 .grid-outer {
@@ -88,76 +88,123 @@ body {
 
 .count-wrapper-bank {
   display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin: auto;
-	width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
 
-	& > * {
-		padding: 10px;
-		border: 1px solid $black;
-		margin: 5px 8px;
-		min-width: 30px;
-		text-align: center;
-		border-radius: 4px;
-		line-height: 30px;
-	}
+  & > * {
+    padding: 10px;
+    border: 1px solid $black;
+    margin: 5px 8px;
+    min-width: 30px;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 30px;
+  }
 
   .btn-qty {
-		font-size: 34px;
-		cursor: pointer;
-		user-select: none;
+    font-size: 34px;
+    cursor: pointer;
+    user-select: none;
   }
 
   .count {
-		font-size: 28px;
-		line-height: 26px;
-		font-family: $orbitron;
-		width: 50px;
+    font-size: 28px;
+    line-height: 26px;
+    font-family: $orbitron;
+    width: 50px;
   }
 }
 
 .count-wrapper-prod {
   display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin: auto;
-	width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
 
-	& > * {
-		padding: 5px;
-		border: 1px solid $black;
-		margin: 5px 5px;
-		min-width: 30px;
-		text-align: center;
-		border-radius: 4px;
-		line-height: 25px;
-	}
+  & > * {
+    padding: 5px;
+    border: 1px solid $black;
+    margin: 5px 5px;
+    min-width: 30px;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 25px;
+  }
 
   .btn-qty {
-		font-size: 20px;
-		cursor: pointer;
-		user-select: none;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
   }
 
   .count {
-		font-size: 18px;
-		line-height: 26px;
-		font-family: $orbitron;
-		width: 30px;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: $orbitron;
+    width: 30px;
   }
 }
 
 .options-container {
-	margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-	.btn-reset,
-	.btn-prod-phase {
-		border: 1px solid $black;
-		border-radius: 4px;
-		padding: 5px 10px;
-		user-select: none;
-		cursor: pointer;
-		margin-right:20px;
-	}
+  margin-top: 30px;
+
+  .button-wrapper {
+
+    .btn-options {
+			display: inline-block;
+      font-size: 16px;
+      line-height: 16px;
+      border: 1px solid $black;
+      border-radius: 4px;
+      padding: 5px 10px;
+      user-select: none;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+  }
+
+  .tr-wrapper {
+		display: flex;
+		flex-direction: row;
+
+		& > * {
+			height: 16px;
+			font-size: 20px;
+			line-height: 14px;
+			padding: 5px;
+			border: 1px solid $black;
+			margin: 0 4px;
+			min-width: 30px;
+			text-align: center;
+			border-radius: 4px;
+		}
+
+		.tr-text {
+			font-size: 16px;
+			line-height: 16px;
+		}
+
+		.tr-colon {
+			border: 0px;
+			min-width: 5px;
+			font-weight: bold;
+			font-size: 30px;
+			line-height: 14px;
+			margin: 0;
+		}
+
+		.tr-count {
+			font-size: 16px;
+			line-height: 16px;
+			font-family: $orbitron;
+			width: 44px;
+		}
+  }
 }
