@@ -6,10 +6,24 @@ $('.plus').click(function () {
 $('.minus').click(function () {
   let credits = $(this)[0].hasAttribute('data-credits') ? -5 : 0;
 
-  if ($(this).next().val() > credits)
+  if ($(this).next().val() > credits) {
     $(this)
       .next()
       .val(+$(this).next().val() - 1);
+  }
+});
+
+$('.tr-plus').click(function () {
+  $(this)
+    .prev()
+    .val(+$(this).prev().val() + 1);
+});
+$('.tr-minus').click(function () {
+  if ($(this).next().val() > 0) {
+    $(this)
+      .next()
+      .val(+$(this).next().val() - 1);
+  }
 });
 
 $('#reset-board').click(function () {
@@ -23,21 +37,19 @@ $('#production-phase').click(function () {
   let energyBank = parseInt($('#energy-bank').val());
   let heatBank = parseInt($('#heat-bank').val());
   heatBank += energyBank;
-	$('#heat-bank').val(heatBank);
-	$('#energy-bank').val(0);
+  $('#heat-bank').val(heatBank);
+  $('#energy-bank').val(0);
 
   // Add prod to bank
   $('.prod').each(function () {
     let prod = parseInt($(this).find('input').val());
-		let bank = parseInt($(this).prev().find('input').val());
-		bank += prod
-		$(this).prev().find('input').val(bank)
+    let bank = parseInt($(this).prev().find('input').val());
+    bank += prod;
+    $(this).prev().find('input').val(bank);
 
-		// credits cannot go below 0, but should be ok
-		// as the TR will be min 20 so will stop it ever
-		// going to 0 as most the neg prod can be is -5
-
-
+    // credits cannot go below 0, but should be ok
+    // as the TR will be min 20 so will stop it ever
+    // going to 0 as most the neg prod can be is -5
   });
 
   // Need to add section for TR num so it can
@@ -45,10 +57,9 @@ $('#production-phase').click(function () {
 });
 
 $('#load-state').click(function () {
-	return
+  return;
 });
 
 $('#save-state').click(function () {
-	return
+  return;
 });
-
