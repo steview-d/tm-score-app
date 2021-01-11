@@ -19,7 +19,7 @@ $('.tr-plus').click(function () {
     .val(+$(this).prev().val() + 1);
 });
 $('.tr-minus').click(function () {
-  if ($(this).next().val() > 0) {
+  if ($(this).next().val() > 14) {
     $(this)
       .next()
       .val(+$(this).next().val() - 1);
@@ -28,7 +28,11 @@ $('.tr-minus').click(function () {
 
 $('#reset-board').click(function () {
   $('input').each(function () {
-    $(this).val(0);
+		if ($(this).hasClass('tr-count')) {
+			$(this).val(20);
+		} else {
+			$(this).val(0);
+		}
   });
 });
 
@@ -46,11 +50,13 @@ $('#production-phase').click(function () {
     let bank = parseInt($(this).prev().find('input').val());
     bank += prod;
     $(this).prev().find('input').val(bank);
+	});
 
-    // credits cannot go below 0, but should be ok
-    // as the TR will be min 20 so will stop it ever
-    // going to 0 as most the neg prod can be is -5
-  });
+	// Add TR to Credits
+	let trNum = parseInt($('#tr-num').val());
+	let creditsBank = parseInt($('#credits-bank').val());
+	creditsBank += trNum;
+	$('#credits-bank').val(creditsBank);
 
   // Need to add section for TR num so it can
   // be added to Credits when running prod phase.
