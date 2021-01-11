@@ -28,11 +28,11 @@ $('.tr-minus').click(function () {
 
 $('#reset-board').click(function () {
   $('input').each(function () {
-		if ($(this).hasClass('tr-count')) {
-			$(this).val(20);
-		} else {
-			$(this).val(0);
-		}
+    if ($(this).hasClass('tr-count')) {
+      $(this).val(20);
+    } else {
+      $(this).val(0);
+    }
   });
 });
 
@@ -50,22 +50,29 @@ $('#production-phase').click(function () {
     let bank = parseInt($(this).prev().find('input').val());
     bank += prod;
     $(this).prev().find('input').val(bank);
-	});
+  });
 
-	// Add TR to Credits
-	let trNum = parseInt($('#tr-num').val());
-	let creditsBank = parseInt($('#credits-bank').val());
-	creditsBank += trNum;
-	$('#credits-bank').val(creditsBank);
+  // Add TR to Credits
+  let trNum = parseInt($('#tr-num').val());
+  let creditsBank = parseInt($('#credits-bank').val());
+  creditsBank += trNum;
+  $('#credits-bank').val(creditsBank);
 
   // Need to add section for TR num so it can
   // be added to Credits when running prod phase.
 });
 
 $('#load-state').click(function () {
-  return;
+	let saveState = localStorage.getItem("tmSaveState").split(',')
+	$('input').each(function (idx) {
+		this.value = saveState[idx]
+	});
 });
 
 $('#save-state').click(function () {
-  return;
+	let saveState = [];
+	$('input').each(function () {
+		saveState.push(this.value)
+	});
+	localStorage.setItem("tmSaveState", saveState)
 });
