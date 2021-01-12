@@ -7,210 +7,274 @@ $black: #000000;
 body {
   font-family: $orbitron;
   background-color: #eeeeee;
-}
 
-.title-container {
-  text-align: center;
-}
-
-.grid-outer {
-  display: grid;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-
-  border-top: 1px solid $black;
-  border-left: 1px solid $black;
-
-  grid-template-areas:
-    'credits-bank steel-bank titanium-bank'
-    'credits-prod steel-prod titanium-prod'
-    'greenery-bank energy-bank heat-bank'
-    'greenery-prod energy-prod heat-prod';
-
-  @media screen and (max-width: 767px) {
-    grid-template-areas:
-      'credits-bank steel-bank'
-      'credits-prod steel-prod'
-      'titanium-bank greenery-bank'
-      'titanium-prod greenery-prod'
-      'energy-bank heat-bank'
-      'energy-prod heat-prod';
-  }
-
-  & > * {
-    border-bottom: 1px solid $black;
-    border-right: 1px solid $black;
-    padding: 10px;
-
-    p {
-      margin: 0;
-      margin-bottom: 10px;
-    }
-  }
-}
-
-.grid-1 {
-  grid-area: credits-bank;
-}
-.grid-2 {
-  grid-area: credits-prod;
-}
-.grid-3 {
-  grid-area: steel-bank;
-}
-.grid-4 {
-  grid-area: steel-prod;
-}
-.grid-5 {
-  grid-area: titanium-bank;
-}
-.grid-6 {
-  grid-area: titanium-prod;
-}
-.grid-7 {
-  grid-area: greenery-bank;
-}
-.grid-8 {
-  grid-area: greenery-prod;
-}
-.grid-9 {
-  grid-area: energy-bank;
-}
-.grid-10 {
-  grid-area: energy-prod;
-}
-.grid-11 {
-  grid-area: heat-bank;
-}
-.grid-12 {
-  grid-area: heat-prod;
-}
-
-.count-wrapper-bank {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  margin: auto;
-  width: 100%;
-
-  & > * {
-    padding: 10px;
-    border: 1px solid $black;
-    margin: 5px 8px;
-    min-width: 30px;
-    text-align: center;
-    border-radius: 4px;
-    line-height: 30px;
-  }
-
-  .btn-qty {
-    font-size: 34px;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .count {
-    font-size: 28px;
-    line-height: 26px;
-    font-family: $orbitron;
-    width: 50px;
-  }
+  min-height: 100vh;
 }
 
-.count-wrapper-prod {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: auto;
-  width: 100%;
+.board-outer {
+  margin-bottom: 60px;
 
-  & > * {
-    padding: 5px;
-    border: 1px solid $black;
-    margin: 5px 5px;
-    min-width: 30px;
-    text-align: center;
-    border-radius: 4px;
-    line-height: 25px;
-  }
+  .title-container {
+		text-align: center;
+		margin: auto 50px;
 
-  .btn-qty {
-    font-size: 20px;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .count {
-    font-size: 18px;
-    line-height: 26px;
-    font-family: $orbitron;
-    width: 30px;
-  }
-}
-
-.options-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  margin-top: 30px;
-
-  .button-wrapper {
-
-    .btn-options {
-			display: inline-block;
-      font-size: 16px;
-      line-height: 16px;
-      border: 1px solid $black;
-      border-radius: 4px;
-      padding: 5px 10px;
-      user-select: none;
-      cursor: pointer;
-      margin-right: 20px;
-    }
-  }
-
-  .tr-wrapper {
-		display: flex;
-		flex-direction: row;
-
-		& > * {
-			height: 16px;
+    h1 {
+			word-wrap: break-word;
 			font-size: 20px;
-			line-height: 14px;
-			padding: 5px;
+      line-height: 26px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+  }
+
+  .grid-outer {
+    display: grid;
+    grid-column-gap: 0px;
+		grid-row-gap: 0px;
+
+		max-width: 100%;
+
+    border-top: 1px solid $black;
+		border-left: 1px solid $black;
+
+		// grid-template-columns: 1fr 100px;
+
+    grid-template-areas:
+      'credits-bank steel-bank titanium-bank'
+      'credits-prod steel-prod titanium-prod'
+      'greenery-bank energy-bank heat-bank'
+      'greenery-prod energy-prod heat-prod';
+
+    @media screen and (max-width: 767px) {
+      grid-template-areas:
+        'credits-bank steel-bank'
+        'credits-prod steel-prod'
+        'titanium-bank greenery-bank'
+        'titanium-prod greenery-prod'
+        'energy-bank heat-bank'
+        'energy-prod heat-prod';
+    }
+
+    & > * {
+      border-bottom: 1px solid $black;
+      border-right: 1px solid $black;
+      padding: 10px;
+
+      p {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .grid-1 {
+    grid-area: credits-bank;
+  }
+  .grid-2 {
+    grid-area: credits-prod;
+  }
+  .grid-3 {
+    grid-area: steel-bank;
+  }
+  .grid-4 {
+    grid-area: steel-prod;
+  }
+  .grid-5 {
+    grid-area: titanium-bank;
+  }
+  .grid-6 {
+    grid-area: titanium-prod;
+  }
+  .grid-7 {
+    grid-area: greenery-bank;
+  }
+  .grid-8 {
+    grid-area: greenery-prod;
+  }
+  .grid-9 {
+    grid-area: energy-bank;
+  }
+  .grid-10 {
+    grid-area: energy-prod;
+  }
+  .grid-11 {
+    grid-area: heat-bank;
+  }
+  .grid-12 {
+    grid-area: heat-prod;
+  }
+
+  .count-wrapper-bank {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+
+    & > * {
+      padding: 5px;
+      margin: 5px;
+			min-width: 20px;
+			font-size: 17px;
+			line-height: 15px;
 			border: 1px solid $black;
-			margin: 0 4px;
-			min-width: 30px;
-			text-align: center;
 			border-radius: 4px;
-			user-select: none;
-			cursor: pointer;
-		}
+      text-align: center;
 
-		.tr-text {
-			font-size: 16px;
-			line-height: 16px;
-			user-select: none;
-			cursor: default;
-		}
+			@media screen and (min-width: 768px) {
+				padding: 10px;
+				margin: 5px 8px;
+				min-width: 30px;
+				font-size: 34px;
+				line-height: 36px;
+			}
+    }
 
-		.tr-colon {
-			border: 0px;
-			min-width: 5px;
-			font-weight: bold;
-			font-size: 30px;
-			line-height: 14px;
-			margin: 0;
-			cursor: default;
-		}
+    .btn-qty {
+      cursor: pointer;
+      user-select: none;
+    }
 
-		.tr-count {
-			font-size: 16px;
-			line-height: 16px;
+    .count {
 			font-family: $orbitron;
-			width: 44px;
-			cursor: text;
+      font-size: 14px;
+      line-height: 17px;
+			width: 40px;
+
+			@media screen and (min-width: 768px) {
+				font-size: 34px;
+				line-height: 30px;
+				width: 50px;
+			}
+    }
+  }
+
+  .count-wrapper-prod {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+
+    & > * {
+      padding: 5px;
+      margin: 5px 5px;
+			min-width: 16px;
+			font-size: 10px;
+			line-height: 14px;
+			border: 1px solid $black;
+			border-radius: 4px;
+			text-align: center;
+
+			@media screen and (min-width: 768px) {
+				padding: 5px;
+				margin: 5px 5px;
+				min-width: 30px;
+				font-size: 20px;
+				line-height: 25px;
+			}
+    }
+
+    .btn-qty {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .count {
+			font-family: $orbitron;
+      font-size: 12px;
+      line-height: 15px;
+			width: 32px;
+
+			@media screen and (min-width: 768px) {
+				font-size: 18px;
+				line-height: 26px;
+				width: 30px;
+			}
+    }
+  }
+
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+		margin-top: 30px;
+
+		@media screen and (min-width: 767px) {
+			flex-direction: row;
+		}
+
+    .button-wrapper {
+      display: flex;
+			flex-direction: row;
+			
+			@media screen and (max-width: 767px) {
+				width: 100%;
+				flex-wrap: wrap;
+				justify-content: space-around;
+			}
+
+      & > * {
+				// height: 16px;
+				line-height:20px;
+				font-size: 16px;
+        padding: 5px;
+        border: 1px solid $black;
+        min-width: 30px;
+        text-align: center;
+        border-radius: 4px;
+        user-select: none;
+        cursor: pointer;
+			}
+
+      .tr-colon {
+        border: 0px;
+        min-width: 5px;
+        font-weight: bold;
+        font-size: 30px;
+        margin: 0 2px;
+        cursor: default;
+			}
+
+			.tr-qty {
+        font-size: 20px;
+			}
+
+      .tr-count {
+        font-family: $orbitron;
+				width: 44px;
+				margin: 0 8px;
+        cursor: text;
+			}
+
+			.btn-options {
+				display: inline-block;
+				padding: 5px 10px;
+				margin-left: 15px;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				@media screen and (max-width: 767px) {
+					margin: 0 10px;
+
+					&:first-child {
+						margin-left: 10px;
+					}
+				}
+			}
+
+			.mr {
+				margin-right: 50px;
+			}
 		}
   }
 }
