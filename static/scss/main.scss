@@ -18,12 +18,12 @@ body {
   margin-bottom: 60px;
 
   .title-container {
-		text-align: center;
-		margin: auto 50px;
+    text-align: center;
+    margin: auto 50px;
 
     h1 {
-			word-wrap: break-word;
-			font-size: 20px;
+      word-wrap: break-word;
+      font-size: 20px;
       line-height: 26px;
 
       @media screen and (min-width: 768px) {
@@ -36,14 +36,14 @@ body {
   .grid-outer {
     display: grid;
     grid-column-gap: 0px;
-		grid-row-gap: 0px;
+    grid-row-gap: 0px;
 
-		max-width: 100%;
+    max-width: 100%;
 
     border-top: 1px solid $black;
-		border-left: 1px solid $black;
+    border-left: 1px solid $black;
 
-		// grid-template-columns: 1fr 100px;
+    // grid-template-columns: 1fr 100px;
 
     grid-template-areas:
       'credits-bank steel-bank titanium-bank'
@@ -120,20 +120,20 @@ body {
     & > * {
       padding: 5px;
       margin: 5px;
-			min-width: 20px;
-			font-size: 17px;
-			line-height: 15px;
-			border: 1px solid $black;
-			border-radius: 4px;
+      min-width: 20px;
+      font-size: 17px;
+      line-height: 15px;
+      border: 1px solid $black;
+      border-radius: 4px;
       text-align: center;
 
-			@media screen and (min-width: 768px) {
-				padding: 10px;
-				margin: 5px 8px;
-				min-width: 30px;
-				font-size: 34px;
-				line-height: 36px;
-			}
+      @media screen and (min-width: 768px) {
+        padding: 10px;
+        margin: 5px 8px;
+        min-width: 30px;
+        font-size: 34px;
+        line-height: 36px;
+      }
     }
 
     .btn-qty {
@@ -142,16 +142,16 @@ body {
     }
 
     .count {
-			font-family: $orbitron;
+      font-family: $orbitron;
       font-size: 14px;
       line-height: 17px;
-			width: 40px;
+      width: 40px;
 
-			@media screen and (min-width: 768px) {
-				font-size: 34px;
-				line-height: 30px;
-				width: 50px;
-			}
+      @media screen and (min-width: 768px) {
+        font-size: 34px;
+        line-height: 30px;
+        width: 50px;
+      }
     }
   }
 
@@ -165,20 +165,20 @@ body {
     & > * {
       padding: 5px;
       margin: 5px 5px;
-			min-width: 16px;
-			font-size: 10px;
-			line-height: 14px;
-			border: 1px solid $black;
-			border-radius: 4px;
-			text-align: center;
+      min-width: 16px;
+      font-size: 10px;
+      line-height: 14px;
+      border: 1px solid $black;
+      border-radius: 4px;
+      text-align: center;
 
-			@media screen and (min-width: 768px) {
-				padding: 5px;
-				margin: 5px 5px;
-				min-width: 30px;
-				font-size: 20px;
-				line-height: 25px;
-			}
+      @media screen and (min-width: 768px) {
+        padding: 5px;
+        margin: 5px 5px;
+        min-width: 30px;
+        font-size: 20px;
+        line-height: 25px;
+      }
     }
 
     .btn-qty {
@@ -187,94 +187,132 @@ body {
     }
 
     .count {
-			font-family: $orbitron;
+      font-family: $orbitron;
       font-size: 12px;
       line-height: 15px;
-			width: 32px;
+      width: 32px;
 
-			@media screen and (min-width: 768px) {
-				font-size: 18px;
-				line-height: 26px;
-				width: 30px;
-			}
+      @media screen and (min-width: 768px) {
+        font-size: 18px;
+        line-height: 26px;
+        width: 30px;
+      }
     }
   }
 
+  // lower options
   .options-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 20px;
 
-		margin-top: 30px;
+    @media screen and (min-width: 767px) {
+      flex-direction: row;
+      margin-top: 30px;
+    }
 
-		@media screen and (min-width: 767px) {
-			flex-direction: row;
-		}
+    .btn-options {
+      display: inline-block;
+      border: 1px solid $black;
+      padding: 5px 10px;
+      margin-left: 0;
+      min-width: 30px;
+      text-align: center;
+      border-radius: 4px;
+      user-select: none;
+      cursor: pointer;
 
-    .button-wrapper {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      @media screen and (min-width: 767px) {
+        margin-left: 12px;
+      }
+    }
+
+    .game-buttons {
       display: flex;
-			flex-direction: row;
+      flex-direction: column;
+      margin: auto;
+
+      @media screen and (min-width: 767px) {
+        flex-direction: row;
+      }
+
+      .tr-buttons {
+        display: flex;
+        flex-direction: row;
+
+        .tr-colon {
+          border: 0px;
+          min-width: 5px;
+          font-weight: bold;
+          font-size: 30px;
+          margin: 0 2px;
+          line-height: 28px;
+          margin: 0 5px;
+          cursor: default;
+        }
+
+        .tr-qty {
+          font-size: 20px;
+          line-height: 20px;
+          border: 1px solid $black;
+          padding: 5px 5px;
+          min-width: 24px;
+          text-align: center;
+          border-radius: 4px;
+          user-select: none;
+          cursor: pointer;
+
+          &:last-child {
+            margin-right: 20px;
+          }
+        }
+
+        .tr-count {
+          font-family: $orbitron;
+          width: 34px;
+          margin: 0 10px;
+          cursor: text;
+        }
+      }
+
+      .prod-phase-button {
+        margin: 20px 0;
+
+        @media screen and (min-width: 767px) {
+          margin: 0;
+        }
+      }
+    }
+
+    .state-buttons {
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (min-width: 767px) {
+        margin-left: 50px;
+			}
 			
-			@media screen and (max-width: 767px) {
-				width: 100%;
-				flex-wrap: wrap;
-				justify-content: space-around;
-			}
-
-      & > * {
-				// height: 16px;
-				line-height:20px;
-				font-size: 16px;
-        padding: 5px;
-        border: 1px solid $black;
-        min-width: 30px;
-        text-align: center;
-        border-radius: 4px;
-        user-select: none;
-        cursor: pointer;
-			}
-
-      .tr-colon {
-        border: 0px;
-        min-width: 5px;
-        font-weight: bold;
-        font-size: 30px;
-        margin: 0 2px;
-        cursor: default;
-			}
-
-			.tr-qty {
-        font-size: 20px;
-			}
-
-      .tr-count {
-        font-family: $orbitron;
-				width: 44px;
-				margin: 0 8px;
-        cursor: text;
-			}
-
 			.btn-options {
-				display: inline-block;
-				padding: 5px 10px;
-				margin-left: 15px;
+				font-size: 12px;
+				margin: 0 8px;
+
+				@media screen and (min-width: 767px) {
+					font-size: 16px;
+				}
 
 				&:first-child {
 					margin-left: 0;
 				}
 
-				@media screen and (max-width: 767px) {
-					margin: 0 10px;
-
-					&:first-child {
-						margin-left: 10px;
-					}
+				&:last-child {
+					margin-right: 0;
 				}
 			}
-
-			.mr {
-				margin-right: 50px;
-			}
-		}
+    }
   }
 }
