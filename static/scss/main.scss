@@ -33,6 +33,12 @@ body {
     }
   }
 
+  .grid-border {
+    border: 1px solid #000000;
+    padding: 5px;
+    background-color: #ffffff;
+  }
+
   .grid-outer {
     display: grid;
     grid-column-gap: 0px;
@@ -42,6 +48,7 @@ body {
 
     border-top: 1px solid $black;
     border-left: 1px solid $black;
+    background-color: #eeeeee;
 
     // grid-template-columns: 1fr 100px;
 
@@ -70,6 +77,24 @@ body {
         margin: 0;
         margin-bottom: 10px;
       }
+		}
+		
+		.bank {
+			padding: 20px;
+			.resource-icon {
+				width: 80px;
+				margin: 0 auto 17px;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+    .prod {
+      background-image: url('/static/img/tile_bg.png');
+      background-repeat: repeat;
     }
   }
 
@@ -131,25 +156,27 @@ body {
         padding: 10px;
         margin: 5px 8px;
         min-width: 30px;
-        font-size: 34px;
-        line-height: 36px;
+        font-size: 36px;
+        line-height: 22px;
       }
     }
 
     .btn-qty {
       cursor: pointer;
-      user-select: none;
+			user-select: none;
+			margin: 0 5px;
     }
 
     .count {
       font-family: $orbitron;
       font-size: 14px;
       line-height: 17px;
-      width: 40px;
+			width: 40px;
+			margin: 0 5px;
 
       @media screen and (min-width: 768px) {
-        font-size: 34px;
-        line-height: 30px;
+        font-size: 24px;
+        line-height: 26px;
         width: 50px;
       }
     }
@@ -182,6 +209,7 @@ body {
     }
 
     .btn-qty {
+      background-color: #ffffff;
       cursor: pointer;
       user-select: none;
     }
@@ -268,7 +296,9 @@ body {
           cursor: pointer;
 
           &:last-child {
-            margin-right: 20px;
+            @media screen and (min-width: 767px) {
+              margin-right: 20px;
+            }
           }
         }
 
@@ -295,24 +325,24 @@ body {
 
       @media screen and (min-width: 767px) {
         margin-left: 50px;
-			}
-			
-			.btn-options {
-				font-size: 12px;
-				margin: 0 8px;
+      }
 
-				@media screen and (min-width: 767px) {
-					font-size: 16px;
-				}
+      .btn-options {
+        font-size: 12px;
+        margin: 0 8px;
 
-				&:first-child {
-					margin-left: 0;
-				}
+        @media screen and (min-width: 767px) {
+          font-size: 16px;
+        }
 
-				&:last-child {
-					margin-right: 0;
-				}
-			}
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
