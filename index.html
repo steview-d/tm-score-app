@@ -19,17 +19,22 @@
 		<div class="grid-border">
 			<div class="grid-outer">
 				<div class="grid-1 grid-elem bank">
-					<div class="resource-icon">
-						<img src="static/img/credits_icon.png" alt="credits icon">
+					<div style="z-index: 1000;position: relative;">
+						<div class="resource-icon">
+							<img src="static/img/credits_icon.png" alt="credits icon">
+						</div>
+						<div class="count-wrapper-bank">
+							<div class="minus btn-qty">
+								-
+							</div>
+							<input id="credits-bank" class="count" value="0" />
+							<div class="plus btn-qty">
+								+
+							</div>
+						</div>
 					</div>
-					<div class="count-wrapper-bank">
-						<div class="minus btn-qty">
-							-
-						</div>
-						<input id="credits-bank" class="count" value="0" />
-						<div class="plus btn-qty">
-							+
-						</div>
+					<div class="bg-img">
+						<img src="static/img/credits_bank_bg.jpg" alt="">
 					</div>
 				</div>
 				<div class="grid-2 grid-elem prod">

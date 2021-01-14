@@ -34,23 +34,18 @@ body {
   }
 
   .grid-border {
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     padding: 5px;
-    background-color: #ffffff;
+    background-color: #777777;
   }
 
   .grid-outer {
     display: grid;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 
     max-width: 100%;
-
-    border-top: 1px solid $black;
-    border-left: 1px solid $black;
-    background-color: #eeeeee;
-
-    // grid-template-columns: 1fr 100px;
+    background-color: #777777;
 
     grid-template-areas:
       'credits-bank steel-bank titanium-bank'
@@ -69,32 +64,65 @@ body {
     }
 
     & > * {
-      border-bottom: 1px solid $black;
-      border-right: 1px solid $black;
       padding: 10px;
 
       p {
         margin: 0;
         margin-bottom: 10px;
       }
-		}
-		
-		.bank {
-			padding: 20px;
-			.resource-icon {
-				width: 80px;
-				margin: 0 auto 17px;
+    }
+
+    .bank {
+			position: relative;
+			background-color: #eeeeee;
+			margin-bottom: -2px;
+			padding: 20px 15px;
+			overflow: hidden;
+			box-shadow: inset 0 0 8px $black;
+			border: 1px solid $black;
+			// border-bottom: 0px;
+			// border-top-left-radius: 4px;
+			// border-top-right-radius: 4px;
+			border-radius: 4px;
+
+      .resource-icon {
+        width: 80px;
+        margin: 0 auto 17px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+			}
+
+			.bg-img {
+				position: absolute;
+				top: 0;
+				left:0;
+				// background-color: rgba(255,0,0,.2);
 
 				img {
-					width: 100%;
-					height: auto;
+					width: auto;
+					max-height: 100%;
+					opacity: .25;
+
+					@media screen and (min-width:768px) {
+						max-width: 100%;
+						height: auto;
+					}
 				}
 			}
-		}
+    }
 
     .prod {
       background-image: url('/static/img/tile_bg.png');
-      background-repeat: repeat;
+			background-repeat: repeat;
+			box-shadow: inset 0 0 6px $black;
+			border: 1px solid $black;
+			// border-top: 0px;
+			// border-bottom-left-radius: 4px;
+			// border-bottom-right-radius: 4px;
+			border-radius: 4px;
     }
   }
 
@@ -162,17 +190,20 @@ body {
     }
 
     .btn-qty {
+			background-color: #ffffff;
       cursor: pointer;
-			user-select: none;
+      user-select: none;
 			margin: 0 5px;
+			box-shadow: 0 4px 2px -2px #BBBBBB;
     }
 
     .count {
       font-family: $orbitron;
       font-size: 14px;
       line-height: 17px;
-			width: 40px;
+      width: 40px;
 			margin: 0 5px;
+			box-shadow: 0 4px 2px -2px #BBBBBB;
 
       @media screen and (min-width: 768px) {
         font-size: 24px;
