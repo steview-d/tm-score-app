@@ -1,8 +1,10 @@
+// inc input by 1
 $('.plus').click(function () {
   $(this)
     .prev()
     .val(+$(this).prev().val() + 1);
 });
+// dec input by 1
 $('.minus').click(function () {
   let credits = $(this)[0].hasAttribute('data-credits') ? -5 : 0;
 
@@ -13,11 +15,13 @@ $('.minus').click(function () {
   }
 });
 
+// inc tr counter by 1
 $('.tr-plus').click(function () {
   $(this)
     .prev()
     .val(+$(this).prev().val() + 1);
 });
+// dec tr counter by 1
 $('.tr-minus').click(function () {
   if ($(this).next().val() > 14) {
     $(this)
@@ -26,6 +30,7 @@ $('.tr-minus').click(function () {
   }
 });
 
+// reset tr to 20 and all other inputs to 0
 $('#reset-board').click(function () {
   $('input').each(function () {
     if ($(this).hasClass('tr-count')) {
@@ -62,6 +67,7 @@ $('#production-phase').click(function () {
   // be added to Credits when running prod phase.
 });
 
+// populate all input elements with data from local storage
 $('#load-state').click(function () {
   if (localStorage.getItem('tmSaveState') != null) {
     let saveState = localStorage.getItem('tmSaveState').split(',');
@@ -71,6 +77,8 @@ $('#load-state').click(function () {
   }
 });
 
+// save value of all input elements to an array
+// and place in local storage
 $('#save-state').click(function () {
   let saveState = [];
   $('input').each(function () {
