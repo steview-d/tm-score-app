@@ -16,22 +16,42 @@ If you have played Terraforming Mars before, it should already be clear how this
 
 ### Icons
 
-|Icon|Resource|
-|---|---|
-|<img src="static/img/credits_icon.png" width=40px>|Credits|
-|<img src="static/img/steel_icon.png" width=40px>|Steel|
-|<img src="static/img/titanium_icon.png" width=40px>|Titanium|
-|<img src="static/img/greenery_icon.png" width=40px>|Greenery|
-|<img src="static/img/power_icon.png" width=40px>|Power|
-|<img src="static/img/heat_icon.png" width=40px>|Heat|
+|Icon|Resource|Icon|Resource|Icon|Resource|
+|---|---|---|---|---|---|
+|<img src="static/img/credits_icon.png" width=40px>|Credits|<img src="static/img/steel_icon.png" width=40px>|Steel|<img src="static/img/titanium_icon.png" width=40px>|Titanium|
+|<img src="static/img/greenery_icon.png" width=40px>|Greenery|<img src="static/img/power_icon.png" width=40px>|Power|<img src="static/img/heat_icon.png" width=40px>|Heat|
 
 ### Buttons
 
-<img src="static/img/tr_btns.png" width=200px>
-
-Track the `Terraform Rating` with these buttons. This value is used when running the `production phase`, to calculate the correct number of credits.
-
+```
+TR : + 0 -
+```
+Adjust the `Terraform Rating` with these buttons. This value is used when running the `production phase`, to calculate the correct number of credits.
 
 ```
 Run Production Phase
 ```
+Automate the `production phase` of the game.
+
+```
+Load / Save State
+```
+This will retrieve / store all current values (bank and production for each resource, and the current TR value) to local storage.
+
+```
+Clear State
+```
+This will delete any data stored by this app from your local storage.
+
+```
+Reset Board
+```
+This will reset the TR to 20, and all other values to 0.
+
+## Credits
+
+Resource icons created by [Yves Tourigny](https://boardgamegeek.com/filepage/197366/terraforming-mars-resource-icons-vector)
+
+Backgrounds for each resource area sourced from [unsplash](https://unsplash.com/)
+
+Everything else, by me.
