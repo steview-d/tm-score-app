@@ -1,4 +1,4 @@
-# Terraforming Mars Score Board App
+# Terraforming Mars Score Card App
 
 Digital recreation of the score card mat for the game [Terraforming Mars](https://boardgamegeek.com/boardgame/167791/terraforming-mars).
 
@@ -44,7 +44,7 @@ Clear State
 This will delete any data stored by this app from your local storage.
 
 ```
-Reset Board
+Reset Card
 ```
 This will reset the TR to 20, and all other values to 0.
 
