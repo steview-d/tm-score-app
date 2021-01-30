@@ -265,7 +265,6 @@ body {
 
   // quick buy buttons
   .quick-buy-container {
-
     p {
       text-align: center;
       margin: 20px 0;
@@ -273,16 +272,49 @@ body {
       font-size: 18px;
     }
     .quick-buy-inner {
-
       .buy-cards-wrapper {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 80px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 80px);
+        grid-auto-rows: 80px;
         grid-column-gap: 20px;
-        grid-row-gap: 0px;
+        grid-row-gap: 20px;
+
+        grid-template-areas:
+          'buy-one buy-two buy-greenery'
+          'buy-three buy-four buy-temperature';
 
         @media screen and (min-width: 768px) {
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: repeat(1, 80px);
 
+          grid-template-areas:
+          'buy-one buy-two buy-three buy-four buy-greenery buy-temperature';
+        }
+
+        .g1 {
+          grid-area: buy-one;
+        }
+
+        .g2 {
+          grid-area: buy-two;
+        }
+
+        .g3 {
+          grid-area: buy-three;
+        }
+
+        .g4 {
+          grid-area: buy-four;
+        }
+
+        .g5 {
+          grid-area: buy-greenery;
+          padding-right: 10px;
+        }
+
+        .g6 {
+          grid-area: buy-temperature;
         }
 
         .buy-btn {
