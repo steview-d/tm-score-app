@@ -15,6 +15,30 @@ $('.minus').click(function () {
   }
 });
 
+// buy buttons
+$('.buy-cards-btn').click(function () {
+  buyItem($('#credits-bank'), $(this).data('cost'));
+});
+
+$('#buy-greenery').click(function () {
+  buyItem($('#credits-bank'), 8);
+});
+
+$('#buy-temperature').click(function () {
+  buyItem($('#heat-bank'), 8);
+});
+
+function buyItem(currency, cost) {
+  currency.val(function (i, val) {
+    if (currency.val() >= cost) {
+      v = Number(val);
+      return (v -= cost);
+    } else {
+      return currency.val();
+    }
+  });
+}
+
 // inc tr counter by 1
 $('.tr-plus').click(function () {
   $(this)
