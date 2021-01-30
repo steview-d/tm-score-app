@@ -16,12 +16,12 @@ $('.minus').click(function () {
 });
 
 // buy buttons
-$('.buy-cards-btn').click(function () {
+$('.buy-btn').click(function () {
   buyItem($('#credits-bank'), $(this).data('cost'));
 });
 
 $('#buy-greenery').click(function () {
-  buyItem($('#credits-bank'), 8);
+  buyItem($('#greenery-bank'), 8);
 });
 
 $('#buy-temperature').click(function () {
@@ -33,9 +33,9 @@ function buyItem(currency, cost) {
     if (currency.val() >= cost) {
       v = Number(val);
       return (v -= cost);
-    } else {
-      return currency.val();
     }
+
+    return currency.val();
   });
 }
 
